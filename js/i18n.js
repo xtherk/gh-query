@@ -11,7 +11,7 @@
 
   D['zh-CN'] = {
     'app.title': 'GitHub 搜索构建器',
-    'ui.docs': '搜索语法文档', 'ui.theme': '切换主题', 'ui.themeAuto': '主题：跟随系统', 'ui.themeLight': '主题：浅色', 'ui.themeDark': '主题：深色',
+    'ui.repo': '在 GitHub 上查看源码', 'ui.docs': '搜索语法文档', 'ui.theme': '切换主题', 'ui.themeAuto': '主题：跟随系统', 'ui.themeLight': '主题：浅色', 'ui.themeDark': '主题：深色',
     'ui.tokenSet': 'Token 已设置', 'ui.tokenUnset': '设置 GitHub Token', 'ui.lang': '语言',
     'hero.pre': '让 ', 'hero.em': 'GitHub 搜索', 'hero.post': '更精准',
     'ui.types': '搜索类型', 'ui.conditions': '条件', 'ui.query': '查询', 'ui.clear': '清空条件', 'ui.dirty': '已手动编辑，执行前会同步到条件',
@@ -62,7 +62,7 @@
 
   D['zh-TW'] = {
     'app.title': 'GitHub 搜尋建構器',
-    'ui.docs': '搜尋語法文件', 'ui.theme': '切換主題', 'ui.themeAuto': '主題：跟隨系統', 'ui.themeLight': '主題：淺色', 'ui.themeDark': '主題：深色',
+    'ui.repo': '在 GitHub 上查看原始碼', 'ui.docs': '搜尋語法文件', 'ui.theme': '切換主題', 'ui.themeAuto': '主題：跟隨系統', 'ui.themeLight': '主題：淺色', 'ui.themeDark': '主題：深色',
     'ui.tokenSet': 'Token 已設定', 'ui.tokenUnset': '設定 GitHub Token', 'ui.lang': '語言',
     'hero.pre': '讓 ', 'hero.em': 'GitHub 搜尋', 'hero.post': '更精準',
     'ui.types': '搜尋類型', 'ui.conditions': '條件', 'ui.query': '查詢', 'ui.clear': '清空條件', 'ui.dirty': '已手動編輯，執行前會同步到條件',
@@ -113,7 +113,7 @@
 
   D.en = {
     'app.title': 'GitHub Search Builder',
-    'ui.docs': 'Search syntax docs', 'ui.theme': 'Toggle theme', 'ui.themeAuto': 'Theme: system', 'ui.themeLight': 'Theme: light', 'ui.themeDark': 'Theme: dark',
+    'ui.repo': 'View source on GitHub', 'ui.docs': 'Search syntax docs', 'ui.theme': 'Toggle theme', 'ui.themeAuto': 'Theme: system', 'ui.themeLight': 'Theme: light', 'ui.themeDark': 'Theme: dark',
     'ui.tokenSet': 'Token configured', 'ui.tokenUnset': 'Set GitHub token', 'ui.lang': 'Language',
     'hero.pre': 'Make ', 'hero.em': 'GitHub search', 'hero.post': ' more precise',
     'ui.types': 'Search type', 'ui.conditions': 'Conditions', 'ui.query': 'Query', 'ui.clear': 'Clear conditions', 'ui.dirty': 'Edited by hand — will sync to conditions before running',
@@ -164,7 +164,7 @@
 
   D.ja = {
     'app.title': 'GitHub 検索ビルダー',
-    'ui.docs': '検索構文のドキュメント', 'ui.theme': 'テーマ切替', 'ui.themeAuto': 'テーマ：システム', 'ui.themeLight': 'テーマ：ライト', 'ui.themeDark': 'テーマ：ダーク',
+    'ui.repo': 'GitHub でソースコードを見る', 'ui.docs': '検索構文のドキュメント', 'ui.theme': 'テーマ切替', 'ui.themeAuto': 'テーマ：システム', 'ui.themeLight': 'テーマ：ライト', 'ui.themeDark': 'テーマ：ダーク',
     'ui.tokenSet': 'トークン設定済み', 'ui.tokenUnset': 'GitHub トークンを設定', 'ui.lang': '言語',
     'hero.pre': '', 'hero.em': 'GitHub 検索', 'hero.post': 'をもっと的確に',
     'ui.types': '検索タイプ', 'ui.conditions': '条件', 'ui.query': 'クエリ', 'ui.clear': '条件をクリア', 'ui.dirty': '手動で編集済み。実行前に条件へ同期します',
@@ -215,7 +215,7 @@
 
   D.fr = {
     'app.title': 'Constructeur de recherche GitHub',
-    'ui.docs': 'Documentation de la syntaxe', 'ui.theme': 'Changer de thème', 'ui.themeAuto': 'Thème : système', 'ui.themeLight': 'Thème : clair', 'ui.themeDark': 'Thème : sombre',
+    'ui.repo': 'Voir le code source sur GitHub', 'ui.docs': 'Documentation de la syntaxe', 'ui.theme': 'Changer de thème', 'ui.themeAuto': 'Thème : système', 'ui.themeLight': 'Thème : clair', 'ui.themeDark': 'Thème : sombre',
     'ui.tokenSet': 'Jeton configuré', 'ui.tokenUnset': 'Configurer un jeton GitHub', 'ui.lang': 'Langue',
     'hero.pre': 'Rendez la ', 'hero.em': 'recherche GitHub', 'hero.post': ' plus précise',
     'ui.types': 'Type de recherche', 'ui.conditions': 'Conditions', 'ui.query': 'Requête', 'ui.clear': 'Effacer les conditions', 'ui.dirty': 'Modifiée à la main — sera synchronisée avant exécution',
@@ -266,7 +266,7 @@
 
   D.ru = {
     'app.title': 'Конструктор поиска GitHub',
-    'ui.docs': 'Документация по синтаксису', 'ui.theme': 'Сменить тему', 'ui.themeAuto': 'Тема: системная', 'ui.themeLight': 'Тема: светлая', 'ui.themeDark': 'Тема: тёмная',
+    'ui.repo': 'Исходный код на GitHub', 'ui.docs': 'Документация по синтаксису', 'ui.theme': 'Сменить тему', 'ui.themeAuto': 'Тема: системная', 'ui.themeLight': 'Тема: светлая', 'ui.themeDark': 'Тема: тёмная',
     'ui.tokenSet': 'Токен задан', 'ui.tokenUnset': 'Задать токен GitHub', 'ui.lang': 'Язык',
     'hero.pre': 'Сделайте ', 'hero.em': 'поиск по GitHub', 'hero.post': ' точнее',
     'ui.types': 'Тип поиска', 'ui.conditions': 'Условия', 'ui.query': 'Запрос', 'ui.clear': 'Очистить условия', 'ui.dirty': 'Изменено вручную — перед запуском будет синхронизировано',
