@@ -320,7 +320,8 @@
     for (const l of list) {
       if (/^zh-(tw|hk|mo)|^zh-hant/.test(l)) return 'zh-TW';
       if (l.startsWith('zh')) return 'zh-CN';
-      for (const code of ['ja', 'fr', 'ru', 'en']) if (l.startsWith(code)) return code;
+      const base = l.split('-')[0];
+      if (D[base]) return base; // 新增语言只要在 D 中登记即可被自动识别
     }
     return 'en';
   }
