@@ -119,6 +119,8 @@ js/api.js           GitHub 搜索 API 请求
 js/results.js       结果加载、筛选、排序、分页、导出
 js/app.js           页面逻辑
 js/icons.js         SVG 图标
+docs/               截图与社交分享预览图
+sitemap.xml         供搜索引擎使用的站点地图
 ```
 
 没有第三方依赖，所有脚本以普通 `<script>` 方式加载，本地直接打开 `index.html` 也能运行。

@@ -119,6 +119,8 @@ js/api.js           GitHub search API requests
 js/results.js       loading, filtering, sorting, pagination, export
 js/app.js           page logic
 js/icons.js         SVG icons
+docs/               screenshots and the social preview image
+sitemap.xml         sitemap for search engines
 ```
 
 There are no third-party dependencies. Scripts are loaded as plain `<script>` tags, so opening `index.html` from disk works too.

@@ -3,8 +3,59 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GitHub Search Builder</title>
-  <meta name="description" content="Build GitHub search syntax visually (AND / OR / NOT / groups / ranges), open it on GitHub, or browse, filter and export results in page.">
+  <meta name="google-site-verification" content="-xb0JDZ1FQFmYOxcnbyHdRVBrlyZYNo9iKGCOhQPcXc" />
+  <!--
+    SEO：静态内容面向不执行 JS 的爬虫（如百度），中英双语；
+    执行 JS 后会按当前语言改写 title / description / canonical（见 js/app.js applyStatic）。
+    各语言版本通过 ?lang= 区分，下面的 hreflang 与 sitemap.xml 保持一致。
+  -->
+  <title>gh-query · GitHub 高级搜索语法构建器 | GitHub Advanced Search Query Builder</title>
+  <meta name="description" content="可视化构建 GitHub 高级搜索语法，用 AND / OR / NOT 组合 stars、language、topic 等限定符，生成可直接粘贴到 GitHub 的搜索字符串，也可在线查询、筛选和导出结果。Build GitHub advanced search queries visually with AND / OR / NOT and qualifiers like stars, language and topic.">
+  <meta name="keywords" content="GitHub 高级搜索,GitHub 搜索语法,GitHub 搜索技巧,GitHub 仓库搜索,GitHub 搜索工具,GitHub advanced search,GitHub search syntax,GitHub search query builder,GitHub search qualifiers,gh-query">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="xtherk">
+  <meta name="theme-color" content="#4f46e5">
+  <link rel="alternate" hreflang="zh-CN" href="https://xtherk.github.io/gh-query/?lang=zh-CN">
+  <link rel="alternate" hreflang="en" href="https://xtherk.github.io/gh-query/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://xtherk.github.io/gh-query/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="gh-query">
+  <meta property="og:url" content="https://xtherk.github.io/gh-query/">
+  <meta property="og:title" content="gh-query · GitHub Advanced Search Query Builder">
+  <meta property="og:description" content="Build GitHub advanced search queries visually with AND / OR / NOT, then open them on GitHub or search, filter and export results in the page. 可视化构建 GitHub 高级搜索语法。">
+  <meta property="og:image" content="https://xtherk.github.io/gh-query/docs/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="gh-query: visual GitHub search query builder">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="gh-query · GitHub Advanced Search Query Builder">
+  <meta name="twitter:description" content="Build GitHub advanced search queries visually with AND / OR / NOT and qualifiers like stars, language and topic.">
+  <meta name="twitter:image" content="https://xtherk.github.io/gh-query/docs/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "gh-query",
+    "alternateName": ["GitHub 高级搜索语法构建器", "GitHub Advanced Search Query Builder"],
+    "url": "https://xtherk.github.io/gh-query/",
+    "description": "Build GitHub advanced search queries visually with AND / OR / NOT and qualifiers like stars, language and topic; open them on GitHub or search, filter and export results in the page. 可视化构建 GitHub 高级搜索语法，在线查询、筛选和导出搜索结果。",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript. Chrome/Edge 111+, Firefox 113+, Safari 16.2+.",
+    "inLanguage": ["zh-CN", "zh-TW", "en", "ja", "fr", "ru"],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+    "image": "https://xtherk.github.io/gh-query/docs/og-image.png",
+    "screenshot": "https://xtherk.github.io/gh-query/docs/screenshot.png",
+    "author": { "@type": "Person", "name": "xtherk", "url": "https://github.com/xtherk" },
+    "sameAs": ["https://github.com/xtherk/gh-query"]
+  }
+  </script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Ccircle cx='14' cy='14' r='6' fill='none' stroke='white' stroke-width='2.6'/%3E%3Cpath d='M18.5 18.5l5 5' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
   <script>
     try { var t = JSON.parse(localStorage.getItem('ghs.theme')); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
@@ -32,15 +83,22 @@
   </header>
 
   <main class="wrap">
+    <noscript>
+      <div class="noscript">
+        <p>gh-query 需要启用 JavaScript 才能使用。它是一个开源的 GitHub 高级搜索语法构建工具，可以可视化组合 AND / OR / NOT 与 stars、language、topic 等限定符，生成 GitHub 搜索字符串，并在线查询、筛选和导出结果。</p>
+        <p>gh-query requires JavaScript. It is an open-source GitHub advanced search query builder: combine AND / OR / NOT with qualifiers such as stars, language and topic, generate a GitHub search string, and search, filter and export results online.</p>
+        <p><a href="https://github.com/xtherk/gh-query">https://github.com/xtherk/gh-query</a></p>
+      </div>
+    </noscript>
     <section class="hero">
-      <h1><span data-i18n="hero.pre"></span><span class="grad" data-i18n="hero.em"></span><span data-i18n="hero.post"></span></h1>
+      <h1><span data-i18n="hero.pre">让 </span><span class="grad" data-i18n="hero.em">GitHub 搜索</span><span data-i18n="hero.post">更精准</span></h1>
       <nav id="types" class="type-tabs" role="tablist" data-i18n-aria="ui.types"></nav>
     </section>
 
     <div class="workspace">
       <section class="panel builder-panel">
         <header class="panel-head">
-          <h2 data-i18n="ui.conditions"></h2>
+          <h2 data-i18n="ui.conditions">条件</h2>
           <span class="grow"></span>
           <button type="button" id="btn-reset" class="icon-btn" data-icon="trash" data-i18n-title="ui.clear"></button>
         </header>
@@ -49,7 +107,7 @@
 
       <aside class="panel console">
         <header class="panel-head">
-          <h2 data-i18n="ui.query"></h2>
+          <h2 data-i18n="ui.query">查询</h2>
           <span id="q-dirty" class="dirty" data-i18n-title="ui.dirty" hidden></span>
           <span class="grow"></span>
           <span id="q-len" class="counter"></span>
@@ -57,7 +115,7 @@
 
         <div class="code-editor">
           <pre id="q-hl" aria-hidden="true"></pre>
-          <textarea id="query" rows="1" spellcheck="false" autocomplete="off" data-i18n-aria="ui.queryAria" data-i18n-ph="ui.queryPh"></textarea>
+          <textarea id="query" rows="1" spellcheck="false" autocomplete="off" data-i18n-aria="ui.queryAria" placeholder="输入或粘贴 GitHub 搜索语法" data-i18n-ph="ui.queryPh"></textarea>
         </div>
         <div id="q-warn" class="warns"></div>
 
@@ -71,7 +129,7 @@
         </div>
 
         <div class="cta">
-          <button type="button" id="btn-run" class="btn primary" data-icon="search" data-i18n="ui.search" title="Ctrl + Enter"></button>
+          <button type="button" id="btn-run" class="btn primary" data-icon="search" data-i18n="ui.search" title="Ctrl + Enter">搜索</button>
           <button type="button" id="btn-open" class="btn" data-icon="external">GitHub</button>
         </div>
 
@@ -81,14 +139,14 @@
         </div>
 
         <div class="sub">
-          <div class="sub-title" data-icon="sparkles" data-size="13" data-i18n="ui.examples"></div>
+          <div class="sub-title" data-icon="sparkles" data-size="13" data-i18n="ui.examples">灵感</div>
           <div id="examples" class="examples"></div>
         </div>
 
         <details class="sub history">
-          <summary class="sub-title"><span data-icon="history" data-size="13" data-i18n="ui.history"></span><span id="history-count" class="count"></span></summary>
+          <summary class="sub-title"><span data-icon="history" data-size="13" data-i18n="ui.history">历史</span><span id="history-count" class="count"></span></summary>
           <ul id="history-list"></ul>
-          <button type="button" id="btn-clear-history" class="link-btn" data-i18n="ui.clearHistory"></button>
+          <button type="button" id="btn-clear-history" class="link-btn" data-i18n="ui.clearHistory">清空历史</button>
         </details>
       </aside>
     </div>
@@ -98,7 +156,10 @@
     </section>
   </main>
 
-  <footer class="foot">Powered by GitHub REST API</footer>
+  <footer class="foot">
+    <p class="foot-about" data-i18n="app.about">gh-query 是一个开源的 GitHub 高级搜索语法构建工具：可视化组合 AND / OR / NOT 与各类限定符，生成可直接用于 GitHub 的搜索字符串，也可以在页面内查询、筛选和导出结果。</p>
+    <p>Powered by GitHub REST API · <a href="https://github.com/xtherk/gh-query" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+  </footer>
 
   <dialog id="settings">
     <form id="settings-form" method="dialog">
@@ -107,10 +168,10 @@
         <h2>GitHub Token</h2>
       </div>
       <input id="token" type="password" autocomplete="off" placeholder="github_pat_…">
-      <p class="dlg-note"><span data-i18n="ui.tokenNote"></span> <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer" data-i18n="ui.tokenCreate"></a></p>
+      <p class="dlg-note"><span data-i18n="ui.tokenNote">仅保存在本浏览器，用于提升速率限额与代码搜索。</span> <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer" data-i18n="ui.tokenCreate">创建 Token ↗</a></p>
       <div class="dlg-actions">
-        <button value="cancel" class="btn ghost" data-i18n="ui.cancel"></button>
-        <button value="save" class="btn primary" data-i18n="ui.save"></button>
+        <button value="cancel" class="btn ghost" data-i18n="ui.cancel">取消</button>
+        <button value="save" class="btn primary" data-i18n="ui.save">保存</button>
       </div>
     </form>
   </dialog>

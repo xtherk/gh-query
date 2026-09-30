@@ -10,7 +10,7 @@
   const D = {};
 
   D['zh-CN'] = {
-    'app.title': 'GitHub 搜索构建器',
+    'app.title': 'gh-query · GitHub 高级搜索语法构建器', 'app.desc': '可视化构建 GitHub 高级搜索语法：用 AND / OR / NOT 组合 stars、language、topic 等限定符，生成可直接粘贴到 GitHub 的搜索字符串，也可以在线查询、筛选和导出仓库、Issues、代码等搜索结果。免费开源，无需登录。', 'app.about': 'gh-query 是一个开源的 GitHub 高级搜索语法构建工具：可视化组合 AND / OR / NOT 与各类限定符，生成可直接用于 GitHub 的搜索字符串，也可以在页面内查询、筛选和导出结果。',
     'ui.repo': '在 GitHub 上查看源码', 'ui.docs': '搜索语法文档', 'ui.theme': '切换主题', 'ui.themeAuto': '主题：跟随系统', 'ui.themeLight': '主题：浅色', 'ui.themeDark': '主题：深色',
     'ui.tokenSet': 'Token 已设置', 'ui.tokenUnset': '设置 GitHub Token', 'ui.lang': '语言',
     'hero.pre': '让 ', 'hero.em': 'GitHub 搜索', 'hero.post': '更精准',
@@ -61,7 +61,7 @@
   };
 
   D['zh-TW'] = {
-    'app.title': 'GitHub 搜尋建構器',
+    'app.title': 'gh-query · GitHub 進階搜尋語法建構器', 'app.desc': '視覺化建構 GitHub 進階搜尋語法：用 AND / OR / NOT 組合 stars、language、topic 等限定詞，產生可直接貼到 GitHub 的搜尋字串，也可以線上查詢、篩選與匯出儲存庫、Issues、程式碼等搜尋結果。免費開源，無需登入。', 'app.about': 'gh-query 是一個開源的 GitHub 進階搜尋語法建構工具：視覺化組合 AND / OR / NOT 與各類限定詞，產生可直接用於 GitHub 的搜尋字串，也可以在頁面內查詢、篩選與匯出結果。',
     'ui.repo': '在 GitHub 上查看原始碼', 'ui.docs': '搜尋語法文件', 'ui.theme': '切換主題', 'ui.themeAuto': '主題：跟隨系統', 'ui.themeLight': '主題：淺色', 'ui.themeDark': '主題：深色',
     'ui.tokenSet': 'Token 已設定', 'ui.tokenUnset': '設定 GitHub Token', 'ui.lang': '語言',
     'hero.pre': '讓 ', 'hero.em': 'GitHub 搜尋', 'hero.post': '更精準',
@@ -112,7 +112,7 @@
   };
 
   D.en = {
-    'app.title': 'GitHub Search Builder',
+    'app.title': 'gh-query · GitHub Advanced Search Query Builder', 'app.desc': 'Build GitHub advanced search queries visually. Combine qualifiers like stars, language and topic with AND / OR / NOT, copy the query into GitHub, or search, filter and export repository, issue and code results in the page. Free and open source, no sign-in needed.', 'app.about': 'gh-query is an open-source GitHub advanced search query builder: combine AND / OR / NOT and search qualifiers visually, get a query string ready for GitHub, or search, filter and export results right here.',
     'ui.repo': 'View source on GitHub', 'ui.docs': 'Search syntax docs', 'ui.theme': 'Toggle theme', 'ui.themeAuto': 'Theme: system', 'ui.themeLight': 'Theme: light', 'ui.themeDark': 'Theme: dark',
     'ui.tokenSet': 'Token configured', 'ui.tokenUnset': 'Set GitHub token', 'ui.lang': 'Language',
     'hero.pre': 'Make ', 'hero.em': 'GitHub search', 'hero.post': ' more precise',
@@ -163,7 +163,7 @@
   };
 
   D.ja = {
-    'app.title': 'GitHub 検索ビルダー',
+    'app.title': 'gh-query · GitHub 高度な検索クエリビルダー', 'app.desc': 'GitHub の高度な検索クエリを視覚的に作成。stars・language・topic などの修飾子を AND / OR / NOT で組み合わせ、GitHub に貼り付けるか、このページでリポジトリ・Issue・コードの検索結果を絞り込み・エクスポートできます。無料のオープンソース、ログイン不要。', 'app.about': 'gh-query は GitHub の高度な検索クエリを作成するオープンソースのツールです。AND / OR / NOT と修飾子を視覚的に組み合わせて GitHub 用の検索文字列を作成し、このページで検索・絞り込み・エクスポートもできます。',
     'ui.repo': 'GitHub でソースコードを見る', 'ui.docs': '検索構文のドキュメント', 'ui.theme': 'テーマ切替', 'ui.themeAuto': 'テーマ：システム', 'ui.themeLight': 'テーマ：ライト', 'ui.themeDark': 'テーマ：ダーク',
     'ui.tokenSet': 'トークン設定済み', 'ui.tokenUnset': 'GitHub トークンを設定', 'ui.lang': '言語',
     'hero.pre': '', 'hero.em': 'GitHub 検索', 'hero.post': 'をもっと的確に',
@@ -214,7 +214,7 @@
   };
 
   D.fr = {
-    'app.title': 'Constructeur de recherche GitHub',
+    'app.title': 'gh-query · Générateur de requêtes de recherche avancée GitHub', 'app.desc': 'Construisez visuellement des requêtes de recherche avancée GitHub : combinez des qualificateurs comme stars, language ou topic avec AND / OR / NOT, copiez la requête dans GitHub, ou recherchez, filtrez et exportez les résultats dans la page. Gratuit, open source, sans connexion.', 'app.about': 'gh-query est un générateur open source de requêtes de recherche avancée GitHub : combinez visuellement AND / OR / NOT et les qualificateurs, obtenez une requête prête pour GitHub, ou recherchez, filtrez et exportez les résultats ici.',
     'ui.repo': 'Voir le code source sur GitHub', 'ui.docs': 'Documentation de la syntaxe', 'ui.theme': 'Changer de thème', 'ui.themeAuto': 'Thème : système', 'ui.themeLight': 'Thème : clair', 'ui.themeDark': 'Thème : sombre',
     'ui.tokenSet': 'Jeton configuré', 'ui.tokenUnset': 'Configurer un jeton GitHub', 'ui.lang': 'Langue',
     'hero.pre': 'Rendez la ', 'hero.em': 'recherche GitHub', 'hero.post': ' plus précise',
@@ -265,7 +265,7 @@
   };
 
   D.ru = {
-    'app.title': 'Конструктор поиска GitHub',
+    'app.title': 'gh-query · Конструктор расширенного поиска GitHub', 'app.desc': 'Визуальный конструктор расширенного поиска GitHub: комбинируйте квалификаторы stars, language, topic через AND / OR / NOT, копируйте запрос в GitHub или ищите, фильтруйте и экспортируйте результаты прямо на странице. Бесплатно, с открытым исходным кодом, без входа.', 'app.about': 'gh-query — открытый конструктор расширенного поиска GitHub: визуально комбинируйте AND / OR / NOT и квалификаторы, получайте готовую строку запроса для GitHub или ищите, фильтруйте и экспортируйте результаты прямо здесь.',
     'ui.repo': 'Исходный код на GitHub', 'ui.docs': 'Документация по синтаксису', 'ui.theme': 'Сменить тему', 'ui.themeAuto': 'Тема: системная', 'ui.themeLight': 'Тема: светлая', 'ui.themeDark': 'Тема: тёмная',
     'ui.tokenSet': 'Токен задан', 'ui.tokenUnset': 'Задать токен GitHub', 'ui.lang': 'Язык',
     'hero.pre': 'Сделайте ', 'hero.em': 'поиск по GitHub', 'hero.post': ' точнее',
@@ -326,9 +326,15 @@
     return 'en';
   }
 
+  /*
+   * 语言优先级：地址栏 ?lang= > 本地保存 > 浏览器语言。
+   * ?lang= 让各语言版本有独立 URL，供搜索引擎分别收录（对应 index.html 的 hreflang 与 sitemap.xml）；
+   * 它只决定本次显示的语言，不改写访客保存的偏好。
+   */
+  const urlLang = (() => { try { return new URLSearchParams(location.search).get('lang'); } catch (_) { return null; } })();
   let saved = null;
   try { saved = JSON.parse(localStorage.getItem('ghs.lang')); } catch (_) { /* 存储不可用 */ }
-  let lang = D[saved] ? saved : detect();
+  let lang = D[urlLang] ? urlLang : D[saved] ? saved : detect();
 
   function has(key) { return key in D[lang] || key in D.en; }
 
@@ -345,6 +351,14 @@
     if (!D[l]) return;
     lang = l;
     try { localStorage.setItem('ghs.lang', JSON.stringify(l)); } catch (_) { /* 存储不可用 */ }
+    // 地址栏带 ?lang= 时同步改写，否则刷新后又会回到旧语言
+    try {
+      const u = new URL(location.href);
+      if (u.searchParams.has('lang')) {
+        u.searchParams.set('lang', l);
+        history.replaceState(history.state, '', u.pathname + u.search + u.hash);
+      }
+    } catch (_) { /* file:// 等环境下忽略 */ }
   }
 
   global.GHS = global.GHS || {};

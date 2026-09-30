@@ -344,10 +344,25 @@
 
   /* ---------- 语言 ---------- */
 
+  /*
+   * SEO：按当前语言更新 meta description；canonical 指向当前语言版本（带 ?lang= 时保留该参数，
+   * 与 index.html 的 hreflang 对应）。canonical 只在 JS 中设置，静态 HTML 不写，避免两者冲突。
+   */
+  function applySeo() {
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.content = t('app.desc');
+    if (!/^https?:$/.test(location.protocol)) return;
+    let link = document.querySelector('link[rel="canonical"]');
+    if (!link) { link = document.createElement('link'); link.rel = 'canonical'; document.head.append(link); }
+    const hasLang = new URLSearchParams(location.search).has('lang');
+    link.href = location.origin + location.pathname + (hasLang ? '?lang=' + encodeURIComponent(i18n.lang) : '');
+  }
+
   /* 静态文案：data-i18n 设文本（保留图标），data-i18n-title / -ph / -aria 设属性 */
   function applyStatic() {
     document.documentElement.lang = i18n.lang;
     document.title = t('app.title');
+    applySeo();
     for (const e of document.querySelectorAll('[data-i18n]')) {
       for (const n of [...e.childNodes]) if (!(n.nodeType === 1 && n.classList.contains('ic'))) n.remove();
       e.append(t(e.dataset.i18n));
