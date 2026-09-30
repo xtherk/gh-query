@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Search Builder</title>
+  <meta name="description" content="Build GitHub search syntax visually (AND / OR / NOT / groups / ranges), open it on GitHub, or browse, filter and export results in page.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Ccircle cx='14' cy='14' r='6' fill='none' stroke='white' stroke-width='2.6'/%3E%3Cpath d='M18.5 18.5l5 5' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+  <script>
+    try { var t = JSON.parse(localStorage.getItem('ghs.theme')); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="wrap bar">
+      <a class="brand" href="./">
+        <span class="logo" data-icon="search" data-size="16"></span>
+        <span>GitHub <b>Search</b></span>
+      </a>
+      <span class="grow"></span>
+      <button type="button" id="lang-btn" class="lang-btn" aria-haspopup="listbox" aria-expanded="false" data-i18n-title="ui.lang">
+        <span data-icon="globe"></span><span id="lang-cur"></span><span class="chev" data-icon="chevron" data-size="14"></span>
+      </button>
+      <a class="icon-btn" data-icon="book" data-i18n-title="ui.docs" href="https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax" target="_blank" rel="noopener noreferrer"></a>
+      <button type="button" id="btn-theme" class="icon-btn" data-i18n-aria="ui.theme"></button>
+      <button type="button" id="btn-settings" class="icon-btn key" data-icon="key" aria-label="GitHub Token"></button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1><span data-i18n="hero.pre"></span><span class="grad" data-i18n="hero.em"></span><span data-i18n="hero.post"></span></h1>
+      <nav id="types" class="type-tabs" role="tablist" data-i18n-aria="ui.types"></nav>
+    </section>
+
+    <div class="workspace">
+      <section class="panel builder-panel">
+        <header class="panel-head">
+          <h2 data-i18n="ui.conditions"></h2>
+          <span class="grow"></span>
+          <button type="button" id="btn-reset" class="icon-btn" data-icon="trash" data-i18n-title="ui.clear"></button>
+        </header>
+        <div id="builder"></div>
+      </section>
+
+      <aside class="panel console">
+        <header class="panel-head">
+          <h2 data-i18n="ui.query"></h2>
+          <span id="q-dirty" class="dirty" data-i18n-title="ui.dirty" hidden></span>
+          <span class="grow"></span>
+          <span id="q-len" class="counter"></span>
+        </header>
+
+        <div class="code-editor">
+          <pre id="q-hl" aria-hidden="true"></pre>
+          <textarea id="query" rows="1" spellcheck="false" autocomplete="off" data-i18n-aria="ui.queryAria" data-i18n-ph="ui.queryPh"></textarea>
+        </div>
+        <div id="q-warn" class="warns"></div>
+
+        <div class="tool-row">
+          <select id="sort" data-i18n-aria="ui.sort"></select>
+          <button type="button" id="order" class="icon-btn" data-i18n-aria="ui.order"></button>
+          <span class="grow"></span>
+          <button type="button" id="btn-parse" class="icon-btn" data-icon="parse" data-i18n-title="ui.sync"></button>
+          <button type="button" id="btn-copy" class="icon-btn" data-icon="copy" data-i18n-title="ui.copy"></button>
+          <button type="button" id="btn-share" class="icon-btn" data-icon="link" data-i18n-title="ui.share"></button>
+        </div>
+
+        <div class="cta">
+          <button type="button" id="btn-run" class="btn primary" data-icon="search" data-i18n="ui.search" title="Ctrl + Enter"></button>
+          <button type="button" id="btn-open" class="btn" data-icon="external">GitHub</button>
+        </div>
+
+        <div id="branches" class="sub" hidden>
+          <div class="sub-title" id="branch-title"></div>
+          <ol id="branch-list" class="branch-list"></ol>
+        </div>
+
+        <div class="sub">
+          <div class="sub-title" data-icon="sparkles" data-size="13" data-i18n="ui.examples"></div>
+          <div id="examples" class="examples"></div>
+        </div>
+
+        <details class="sub history">
+          <summary class="sub-title"><span data-icon="history" data-size="13" data-i18n="ui.history"></span><span id="history-count" class="count"></span></summary>
+          <ul id="history-list"></ul>
+          <button type="button" id="btn-clear-history" class="link-btn" data-i18n="ui.clearHistory"></button>
+        </details>
+      </aside>
+    </div>
+
+    <section id="results-card" class="panel results" hidden>
+      <div id="results"></div>
+    </section>
+  </main>
+
+  <footer class="foot">Powered by GitHub REST API</footer>
+
+  <dialog id="settings">
+    <form id="settings-form" method="dialog">
+      <div class="dlg-head">
+        <span class="logo" data-icon="key" data-size="16"></span>
+        <h2>GitHub Token</h2>
+      </div>
+      <input id="token" type="password" autocomplete="off" placeholder="github_pat_…">
+      <p class="dlg-note"><span data-i18n="ui.tokenNote"></span> <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer" data-i18n="ui.tokenCreate"></a></p>
+      <div class="dlg-actions">
+        <button value="cancel" class="btn ghost" data-i18n="ui.cancel"></button>
+        <button value="save" class="btn primary" data-i18n="ui.save"></button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/schema.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/picker.js"></script>
+  <script src="js/query.js"></script>
+  <script src="js/builder.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/results.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
